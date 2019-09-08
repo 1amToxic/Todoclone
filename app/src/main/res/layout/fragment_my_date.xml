@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragments.MyDateFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/blue">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="@dimen/size_icon"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_back_black_24dp"
+            android:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_back"
+            android:text="@string/my_date"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_sub_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title"
+            android:layout_toRightOf="@+id/btn_back"
+            android:text="@string/my_date"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_more_vert_black_24dp"
+            android:tint="@color/white" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="-124dp"></androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/size_icon"
+        android:padding="@dimen/size_icon"
+        android:src="@drawable/ic_add_black_24dp"
+        android:tint="@color/white"
+        app:fabSize="normal" />
+
+    <RelativeLayout
+        android:id="@+id/layout_add_task"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <cn.refactor.library.SmoothCheckBox xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/checkbox"
+            android:layout_alignTop="@+id/edit_text"
+            android:layout_alignBottom="@+id/edit_text"
+            android:padding="@dimen/padding_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <View
+
+            android:background="@color/gray"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+        <EditText
+            android:layout_toLeftOf="@+id/upload"
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/checkbox"
+            android:hint="Them tac vu" />
+
+        <ImageView
+            android:padding="@dimen/padding_icon"
+            android:id="@+id/upload"
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="@dimen/size_icon"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/upload" />
+
+        <ImageView
+            android:padding="@dimen/padding_icon"
+            android:id="@+id/calendar"
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="@dimen/size_icon"
+            android:layout_below="@id/checkbox"
+            android:src="@drawable/calendar" />
+
+        <ImageView
+            android:padding="@dimen/padding_icon"
+            android:id="@+id/notify"
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="@dimen/size_icon"
+            android:layout_below="@id/checkbox"
+            android:layout_toRightOf="@+id/calendar"
+            android:src="@drawable/notification" />
+
+        <ImageView
+            android:padding="@dimen/padding_icon"
+            android:id="@+id/repeat"
+            android:layout_width="@dimen/size_icon"
+            android:layout_height="@dimen/size_icon"
+            android:layout_below="@id/checkbox"
+            android:layout_toRightOf="@id/notify"
+            android:src="@drawable/repeat" />
+    </RelativeLayout>
+</RelativeLayout>
